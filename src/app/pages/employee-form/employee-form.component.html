@@ -1,0 +1,83 @@
+<div class="container">
+    <div class="card">
+        <div class="card-hearder bg-warning">
+            New Employee
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-3">
+                    <label for="">Name</label>
+                    <input type="text" [(ngModel)]="emplyeeobj.fullName" class="form-control" placeholder="name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <label for="">Email</label>
+                    <input type="email"  [(ngModel)]="emplyeeobj.email" class="form-control" placeholder="Email">
+                </div>
+            </div> 
+            <div class="row">
+                <div class="col-3">
+                    <label for="">phone</label>
+                    <input type="text" [(ngModel)]="emplyeeobj.phone" class="form-control" placeholder="phone">
+                </div>
+            </div> 
+            <div class="row">
+                <div class="col-3">
+                    <label for="">Gender</label>
+                    <br>
+                    <input type="radio" name ="gender" value= "Male" [(ngModel)]="emplyeeobj.gender"  placeholder="">Male
+                    <input type="radio" name = "gender" value= "Male"  [(ngModel)]="emplyeeobj.gender" placeholder="">Female
+                </div>
+            </div> 
+            <div class="row">
+                <div class="col-3">
+                    <label for="">Date of joining</label>
+                    <input type="date" [(ngModel)]="emplyeeobj.dateOfJoining" class="form-control" placeholder="phone">
+                </div>
+            </div> 
+             <div class="row">
+                <div class="col-3">
+                    <label for="">Select Department</label>
+                    <select name="" id="" [(ngModel)]="emplyeeobj.depertementId" class ="form-select">
+                        <option value="" *ngFor="let dept of deptList$ | async " [value]="dept.departmentId">{{dept.departmentName}}</option>
+                    </select>
+                </div>
+            </div> 
+             <div class="row">
+                <div class="col-3">
+                    <label for="">Select designation</label>
+                    <select name="" id=""  [(ngModel)]="emplyeeobj.designationId" class ="form-select">
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div> 
+             <div class="row">
+                <div class="col-3">
+                    <label for="">Select Employee type</label>
+                    <select name="" id="" [(ngModel)]="emplyeeobj.employeeType" class ="form-select">
+                        <option value="">Select</option>
+                        <option value="Contract">Contract</option>
+                        <option value="Permanent">Permanent</option>
+                    </select>
+                </div>
+           
+             
+                <div class="col-3">
+                    <label for="">salary</label>
+                    <input type="number" class="form-control" [(ngModel)]="emplyeeobj.salary" placeholder="phone">
+                </div>
+            </div> 
+             <div class="row pt-3">
+                <div class="col-3 text-center">
+                   <button class="btn btn-secondary"> Reset </button>
+                </div>
+                       
+                <div class="col-3 text-center">
+                   <button class=" btn btn-success" (click)="onSaveEmployee()">Save employee</button>
+                </div>
+            </div> 
+
+        </div>
+    </div>
+</div>
